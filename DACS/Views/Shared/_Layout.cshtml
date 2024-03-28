@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>hoclaptrinh.edu.vn</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <!-- Favicon -->
+    <link href="~/Content/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/Template/lib/flaticon/font/flaticon.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="~/Content/Template/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/Content/Template/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/Content/Template/css/style.css" rel="stylesheet">
+    <!-- Navbar Start -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <a href="#" class="navbar-brand ms-lg-5">
+            <h1 class="m-0 text-uppercase text-dark"><i class="bi bi-shop fs-1 text-primary me-3"></i>Khóa học Lập trình</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto py-0">
+                <li><a href="/" class="nav-link" >Trang chủ</a></li>
+                <li><a href="/Home" class="nav-link">Lộ trình</a></li>
+                @*<li class="nav-item dropdown">*@
+                @*<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Danh mục</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="#" class="dropdown-item">Lập trình: Java, Python, C++, JavaScript, Ruby, PHP, SQL,...</a>
+                        <a href="#" class="dropdown-item">Thiết kế website</a>
+                        <a href="#" class="dropdown-item">Phát triển ứng dụng</a>
+                        <a href="#" class="dropdown-item">An toàn thông tin</a>
+                        <a href="#" class="dropdown-item">Học máy và trí tuệ nhân tạo</a>
+                        <a href="#" class="dropdown-item">Tiếng anh</a>
+                        <a href="#" class="dropdown-item">Kỹ năng mềm: giao tiếp, lãnh đạo, quản lý thời gian và tạo động lực.</a>
+                        <a href="#" class="dropdown-item">Tài liệu sách chuyên ngành</a>
+                    </div>*@
+                @*</li>*@
+                <li><a href="#khuyenmai" class="nav-link">Giới thiệu</a></li>
+                <li><a href="#blog" class="nav-link">Blogs</a></li>
+                <li><a href="#lienhe" class="nav-link">Liên Hệ</a></li>
+                <li>@Html.Partial("_LoginPartial")</li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="~/Content/Template-2/fontawesome.css">
+    <link rel="stylesheet" href="~/Content/Template-2/templatemo-grad-school.css">
+    <link rel="stylesheet" href="~/Content/Template-2/owl.css">
+    <link rel="stylesheet" href="~/Content/Template-2/lightbox.css">
+
+</head>
+
+<body>
+
+    @RenderBody()
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-light mt-5 py-5" id="lienhe">
+        <div class="container pt-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Get In Touch</h5>
+                    <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor</p>
+                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>info@example.com</p>
+                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>+012 345 67890</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Quick Links</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
+                        <a class="text-body" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Popular Links</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
+                        <a class="text-body" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Newsletter</h5>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Your Email">
+                            <button class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                    <h6 class="text-uppercase mt-4 mb-3">Follow Us</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 text-center text-body">
+                    <a class="text-body" href="">Terms & Conditions</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">Privacy Policy</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">Customer Support</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">Payments</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">Help</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">FAQs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">&copy; <a class="text-white" href="#">Your Site Name</a>. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed by <a class="text-white" href="https://htmlcodex.com">HTML Codex</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/Template/lib/easing/easing.min.js"></script>
+    <script src="~/Content/Template/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/Content/Template/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/Scripts/js/main.js"></script>
+    @RenderSection("scripts", required: false)
+
+    <!-- Active VIDEO -->
+
+    <script>
+        function showVideo(videoId) {
+            const videos = document.querySelectorAll('.video-videoFREE');
+
+            videos.forEach((video) => {
+                video.classList.remove('show');
+            });
+
+            const targetVideo = document.getElementById(videoId);
+            targetVideo.classList.add('show');
+        }
+    </script>
+
+    <script>
+        // sự kiện click vào các mục lục
+        var syllabusItems = document.querySelectorAll('.syllabus-item');
+        syllabusItems.forEach(function (item) {
+            var cta = item.querySelector('.syllabus__cta');
+            var collapse = item.querySelector('.collapse');
+
+            cta.addEventListener('click', function () {
+                // Đảo ngược trạng thái mở rộng của mục lục khi click
+                collapse.classList.toggle('show');
+            });
+        });
+    </script>
+
+    <script>
+        function redirectToPayment() {
+            var paymentUrl = "";
+            paymentUrl = "/Payment/PaymentWithPayPal";
+            window.location.href = paymentUrl;
+        }
+    </script>
+
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6535d998a84dd54dc483ff26/1hdd5jvc5';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
+    @*Chat Box*@
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6535d998a84dd54dc483ff26/1hdd5jvc5';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
+
+</body>
+</html>

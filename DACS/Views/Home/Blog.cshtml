@@ -1,0 +1,240 @@
+﻿
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PET SHOP - Pet Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Blog Start -->
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <!-- Blog Detail Start -->
+                <div class="mb-5">
+                    <img class="img-fluid w-100 rounded mb-5" src="img/blog-1.jpg" alt="">
+                    <h1 class="text-uppercase mb-4">Công nghệ chống hàng giả bằng blockchain của phó giáo sư Việt</h1>
+                    <p>
+                        Sản phẩm là hệ thống phần mềm hoạt động dựa trên một thuật toán blockchain, mã hóa một mã ID tạo ra "chữ ký" duy nhất của nhà sản xuất giúp xác thực hàng hóa đúng nguồn gốc, khiến hành vi làm hàng giả trở nên bất khả thi.
+                        Theo PGS.TS Nguyễn Đình Quân, Đại học bách khoa TP HCM (ĐHQG TP HCM), trưởng nhóm nghiên cứu, trên thị trường không chỉ sản phẩm xa xỉ bị mạo danh, nhiều mặt hàng thiết yếu như dược phẩm, thực phẩm, nước uống, phần mềm máy tính, thời trang, hàng điện tử cũng bị làm giả, làm nhái. Những hoạt động phi pháp này ảnh hưởng nghiêm trọng uy tín của các doanh nghiệp, tổn hại sức khỏe và tài sản của hàng triệu người tiêu dùng hàng năm trên thế giới. "Chính vì lý do này nhóm nghiên cứu công nghệ chống hàng giả bằng thuật toán chuỗi khối (blockchain)", ông nói.
+                        Deep Signature được phát triển từ ý tưởng của phó giáo sư người Việt cùng cộng sự là nhóm chuyên gia trong lĩnh vực blockchain và công nghiệp sản xuất, gồm TS Jiong Sun (Mỹ) chuyên gia lập trình blockchain, kiến trúc sư phần mềm; chuyên gia phát triển ví blockchain, ứng dụng di động Liam Alford (Anh) và chuyên gia bảo mật hệ thống Umut Duman (Nga).
+                        PGS Quân cho biết thuật toán dựa trên việc thông tin mã hóa trên blockchain không thể bị thay đổi hay can thiệp để tạo ra môi trường minh bạch cho xác thực nhưng vẫn bảo mật dữ liệu gốc nhờ mã hóa một chiều. "Chỉ khi mã sản phẩm được xác thực khớp với địa chỉ ví blockchain của nhà sản xuất, mã sản phẩm mới đích thực là đúng do nhà sản xuất phát hành", PGS Quân mô tả.
+                    </p>
+                    <p>
+                        Hệ thống Deep Signature bao gồm máy chủ backend xử lý dữ liệu cũng như thực hiện các lệnh mã hóa, và hai phần mềm frontend (app) trên di động (sử dụng trên cả hệ điều hành Android và iOS). Hệ thống này liên kết với một mạng blockchain phi tập trung cao để đảm bảo tính bảo mật và an toàn.
+                        Phía nhà sản xuất dùng ứng dụng Deep Signature Admin để mã hóa hàng loạt các mã ID sản phẩm, tạo danh mục với thông tin và hình ảnh sản phẩm muốn gửi đến người tiêu dùng, sau đó kích hoạt mã bằng việc ghi lên blockchain. Mỗi mã ID sẽ đại diện cho một món hàng được bán, bảo mật trong bao bì đựng mà chỉ có người tiêu dùng đầu tiên sở hữu món hàng lấy ra được để xác thực khi mở hàng.
+                        Trong khi đó, phần mềm Deep Signature Verify sẽ dành cho người tiêu dùng - giúp xác nhận mã ID sản phẩm có đúng là đã được nhà sản xuất kích hoạt hay không. Khi quét mã, hệ thống sẽ tự động trả kết quả về nguồn gốc: Nếu mã ID được xác nhận là được chính nhà sản xuất kích hoạt và được xác nhận lần đầu thì món hàng là hàng thật. Ngược lại, nếu kết quả xác thực cho biết mã ID không phải do nhà sản xuất kích hoạt, mã hóa, thì món hàng chắc chắn là giả.
+                        Ngoài ra, nếu mã ID đúng là của nhà sản xuất phát hành (kích hoạt), nhưng đã được xác thực trước đó bởi ai đó thì nghĩa là hàng đã bị can thiệp hoặc là hàng giả nhưng sao chép lại mã hàng thật đã xác thực rồi.
+                    </p>
+                    <img src="~/Content/img/GiaiBa.jpg" alt="" width="600" height="400">
+                    <p>
+                        Tại Cuộc thi Sáng kiến Khoa học 2022 do VnExpress tổ chức, Ban giám khảo đánh giá cao khả năng ứng dụng và thương mại hóa của dự án. Ông David Nguyen - Chủ tịch Ban Cố vấn Mạng lưới Đổi mới Sáng tạo Việt Nam tại Australia, trưởng ban công nghệ mới thuộc Hội đồng Doanh nghiệp Australia- Việt Nam, thành viên ban giám khảo gợi ý, nhóm nghiên cứu tập trung sớm đưa sản phẩm ra thị trường để tận dụng tệp khách hàng cũng như cạnh tranh với tốc độ phát triển các công nghệ hiện nay.
+                    </p>
+                </div>
+                <!-- Blog Detail End -->
+                <!-- Comment List Start -->
+                <div class="mb-5">
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">3 Comments</h3>
+                    <div class="d-flex mb-4">
+                        <img src="img/user.jpg" class="img-fluid" style="width: 45px; height: 45px;">
+                        <div class="ps-3">
+                            <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                            <p>
+                                Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod
+                            </p>
+                            <button class="btn btn-sm btn-light">Reply</button>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <img src="img/user.jpg" class="img-fluid" style="width: 45px; height: 45px;">
+                        <div class="ps-3">
+                            <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                            <p>
+                                Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod
+                            </p>
+                            <button class="btn btn-sm btn-light">Reply</button>
+                        </div>
+                    </div>
+                    <div class="d-flex ms-5 mb-4">
+                        <img src="img/user.jpg" class="img-fluid" style="width: 45px; height: 45px;">
+                        <div class="ps-3">
+                            <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                            <p>
+                                Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod
+                            </p>
+                            <button class="btn btn-sm btn-light">Reply</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Comment List End -->
+                <!-- Comment Form Start -->
+                <div class="bg-light rounded p-5">
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Leave a comment</h3>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control bg-white border-0" placeholder="Your Name" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="email" class="form-control bg-white border-0" placeholder="Your Email" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control bg-white border-0" placeholder="Website" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control bg-white border-0" rows="5" placeholder="Comment"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Leave Your Comment</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- Comment Form End -->
+            </div>
+
+            <!-- Sidebar Start -->
+            <div class="col-lg-4">
+                <!-- Search Form Start -->
+                <div class="mb-5">
+                    <div class="input-group">
+                        <input type="text" class="form-control p-3" placeholder="Keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+                <!-- Search Form End -->
+                <!-- Category Start -->
+                <div class="mb-5">
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Categories</h3>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Web Design</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Web Development</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Web Development</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Keyword Research</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Email Marketing</a>
+                    </div>
+                </div>
+                <!-- Category End -->
+                <!-- Recent Post Start -->
+                <div class="mb-5">
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Recent Post</h3>
+                    <div class="d-flex overflow-hidden mb-3">
+                        <img class="img-fluid" src="img/blog-1.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                        <a href="" class="h5 d-flex align-items-center bg-light px-3 mb-0">
+                            Lorem ipsum dolor sit amet adipis elit
+                        </a>
+                    </div>
+                    <div class="d-flex overflow-hidden mb-3">
+                        <img class="img-fluid" src="img/blog-2.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                        <a href="" class="h5 d-flex align-items-center bg-light px-3 mb-0">
+                            Lorem ipsum dolor sit amet adipis elit
+                        </a>
+                    </div>
+                    <div class="d-flex overflow-hidden mb-3">
+                        <img class="img-fluid" src="img/blog-3.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                        <a href="" class="h5 d-flex align-items-center bg-light px-3 mb-0">
+                            Lorem ipsum dolor sit amet adipis elit
+                        </a>
+                    </div>
+                    <div class="d-flex overflow-hidden mb-3">
+                        <img class="img-fluid" src="img/blog-1.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                        <a href="" class="h5 d-flex align-items-center bg-light px-3 mb-0">
+                            Lorem ipsum dolor sit amet adipis elit
+                        </a>
+                    </div>
+                    <div class="d-flex overflow-hidden mb-3">
+                        <img class="img-fluid" src="img/blog-2.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                        <a href="" class="h5 d-flex align-items-center bg-light px-3 mb-0">
+                            Lorem ipsum dolor sit amet adipis elit
+                        </a>
+                    </div>
+                </div>
+                <!-- Recent Post End -->
+                <!-- Image Start -->
+                <div class="mb-5">
+                    <img src="img/blog-1.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <!-- Image End -->
+                <!-- Tags Start -->
+                <div class="mb-5">
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Tag Cloud</h3>
+                    <div class="d-flex flex-wrap m-n1">
+                        <a href="" class="btn btn-primary m-1">Design</a>
+                        <a href="" class="btn btn-primary m-1">Development</a>
+                        <a href="" class="btn btn-primary m-1">Marketing</a>
+                        <a href="" class="btn btn-primary m-1">SEO</a>
+                        <a href="" class="btn btn-primary m-1">Writing</a>
+                        <a href="" class="btn btn-primary m-1">Consulting</a>
+                        <a href="" class="btn btn-primary m-1">Design</a>
+                        <a href="" class="btn btn-primary m-1">Development</a>
+                        <a href="" class="btn btn-primary m-1">Marketing</a>
+                        <a href="" class="btn btn-primary m-1">SEO</a>
+                        <a href="" class="btn btn-primary m-1">Writing</a>
+                        <a href="" class="btn btn-primary m-1">Consulting</a>
+                    </div>
+                </div>
+                <!-- Tags End -->
+                <!-- Plain Text Start -->
+                <div>
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Plain Text</h3>
+                    <div class="bg-light text-center" style="padding: 30px;">
+                        <p>Vero sea et accusam justo dolor accusam lorem consetetur, dolores sit amet sit dolor clita kasd justo, diam accusam no sea ut tempor magna takimata, amet sit et diam dolor ipsum amet diam</p>
+                        <a href="" class="btn btn-primary py-2 px-4">Read More</a>
+                    </div>
+                </div>
+                <!-- Plain Text End -->
+            </div>
+            <!-- Sidebar End -->
+        </div>
+    </div>
+    <!-- Blog End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+

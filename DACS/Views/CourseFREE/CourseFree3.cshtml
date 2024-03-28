@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "CourseFree3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .video-container {
+            float: left;
+            width: 60%;
+        }
+
+        .content-container {
+            float: left;
+            width: 40%;
+        }
+
+        .list-container {
+            background: #fedebe;
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+            ul.tree ul {
+                display: none;
+            }
+
+            ul.tree li {
+                cursor: pointer;
+            }
+
+                ul.tree li::before {
+                    content: "•";
+                    display: inline-block;
+                    margin-right: 5px;
+                }
+
+                ul.tree li.open::before {
+                    content: "-";
+                }
+
+        .bottom-section {
+            background-color: #ffffff;
+            padding: 20px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-section">
+        <div class="video-container">
+            <div class="video">
+                <h2>Lập trình ReactJS</h2>
+                <!-- Thêm mã HTML/video player ở đây -->
+                <div id="video">
+                    <iframe width="900" height="500" src="https://www.youtube.com/embed/x0fSBAgBrOQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="list-container">
+                <h2>Nội dung khóa học</h2>
+                <ul class="tree">
+                    <li onclick="changeVideo('samx2yC15Pg')">Tìm hiểu về JSX</li>
+                    <li onclick="changeVideo('i1cjVyIZCKs')">Tìm hiểu về JSX FQA</li>
+                    <li onclick="changeVideo('uGopxH14kYA')">Các loại nguyên tố trong React</li>
+                    <li onclick="changeVideo('TvE2FuYiuXo')">Tìm hiểu về Props</li>
+                    <li onclick="changeVideo('5SU6P-cqoJw')">Tạo Components linh hoạt? Làm việc với JSX</li>
+                    <li onclick="changeVideo('1EBe-l1E3pM')">Tạo dự án với React + Webpack</li>
+                    <li onclick="changeVideo('okMA31wi-yg')">Nâng cấp React & ReactDOM từ 17 lên 18</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-section">
+        <h2>Nội dung</h2>
+        <p>
+            ReactJS là một thư viện JavaScript phổ biến và mạnh mẽ được sử dụng để xây dựng giao diện người dùng (UI) cho các ứng dụng web. Nó được phát triển bởi Facebook và được sử dụng rộng rãi trong việc xây dựng các ứng dụng web đơn trang (Single Page Applications) và ứng dụng di động.
+
+            ReactJS sử dụng một cách tiếp cận gọi là "Component-based development" (phát triển dựa trên thành phần). Điều này có nghĩa là bạn có thể tạo ra các thành phần UI độc lập và sử dụng chúng để xây dựng giao diện người dùng phức tạp bằng cách kết hợp các thành phần này lại với nhau. Mỗi thành phần có trạng thái riêng của nó và có thể tái sử dụng, làm cho mã nguồn dễ bảo trì và mở rộng.
+
+            ReactJS sử dụng JSX (JavaScript XML) để mô tả giao diện người dùng trong các thành phần. JSX là một cú pháp mở rộng của JavaScript cho phép bạn kết hợp mã JavaScript và HTML trong cùng một tệp, giúp tạo ra mã nguồn dễ đọc và dễ hiểu. JSX được biên dịch thành JavaScript thuần túy để trình duyệt có thể hiểu được.
+
+            Một trong những ưu điểm của ReactJS là hiệu suất cao và khả năng tái sử dụng. ReactJS sử dụng Virtual DOM (Document Object Model) để quản lý các thay đổi trên giao diện người dùng. Thay vì cập nhật toàn bộ DOM khi có sự thay đổi, ReactJS sẽ chỉ cập nhật những phần DOM cần thiết, giúp tối ưu hóa hiệu suất và tăng tốc độ của ứng dụng. Bên cạnh đó, việc sử dụng các thành phần tái sử dụng giúp tiết kiệm thời gian và công sức trong việc phát triển ứng dụng.
+
+            ReactJS cũng có một cộng đồng phát triển rộng lớn và hỗ trợ đa dạng. Có rất nhiều thư viện và framework bên thứ ba được xây dựng dựa trên ReactJS như Redux, Next.js, và Material-UI, cung cấp các công cụ và giải pháp phong phú để xây dựng ứng dụng chất lượng cao.
+        </p>
+    </div>
+
+    <script>
+        // Định nghĩa hàm thay đổi video
+        function changeVideo(videoId) {
+            // Lấy đối tượng player theo ID
+            var player = document.getElementById('video');
+
+            // Xóa nội dung hiện tại của player
+            player.innerHTML = '';
+
+            // Tạo mã nhúng của video mới
+            var embedCode = '<iframe width="900px" height="500px" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+            // Thêm mã nhúng vào player
+            player.innerHTML = embedCode;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+

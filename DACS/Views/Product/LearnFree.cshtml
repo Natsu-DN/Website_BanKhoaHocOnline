@@ -1,0 +1,116 @@
+﻿@model IEnumerable<DACS.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .video-container {
+            float: left;
+            width: 60%;
+        }
+
+        .content-container {
+            float: left;
+            width: 40%;
+        }
+
+        .list-container {
+            background: #fedebe;
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+            ul.tree ul {
+                display: none;
+            }
+
+            ul.tree li {
+                cursor: pointer;
+            }
+
+                ul.tree li::before {
+                    content: "•";
+                    display: inline-block;
+                    margin-right: 5px;
+                }
+
+                ul.tree li.open::before {
+                    content: "-";
+                }
+
+        .bottom-section {
+            background-color: #ffffff;
+            padding: 20px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-section">
+        <div class="video-container">
+            <div class="video">
+                <h2>Học HTML Và CSS</h2>
+                <!-- Thêm mã HTML/video player ở đây -->
+                <div id="video">
+                    <iframe width="900" height="500" src="https://www.youtube.com/embed/R6plN3FvzFY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="list-container">
+                <h2>Nội dung khóa học</h2>
+                <ul class="tree">
+                    <li onclick="changeVideo('7BJiPyN4zZ0')">Bắt đầu</li>
+                    <li onclick="changeVideo('ZotVkQDC6mU')">Làm quen với HTML</li>
+                    <li onclick="changeVideo('JG0pdfdKjgQ')">Làm quen với CSS</li>
+                    <li onclick="changeVideo('LYnrFSGLCl8')">Cấu trúc file HTML</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-section">
+        <h2>Nội dung</h2>
+        <p>
+            HTML (Hypertext Markup Language) và CSS (Cascading Style Sheets) là hai ngôn ngữ cơ bản và không thể thiếu trong phát triển các trang web hiện đại.
+
+            HTML là ngôn ngữ định dạng và cấu trúc nội dung của trang web. Nó sử dụng các thẻ để đánh dấu các phần tử trên trang như tiêu đề, đoạn văn bản, hình ảnh, bảng, và các liên kết. HTML cung cấp cấu trúc căn bản cho trang web và giúp trình duyệt hiểu cách hiển thị và tương tác với nội dung.
+
+            CSS là ngôn ngữ định dạng và kiểu dáng trang web. Nó được sử dụng để xác định cách các phần tử HTML hiển thị trên trình duyệt. Bằng cách xác định các quy tắc và thuộc tính, CSS cho phép bạn điều chỉnh màu sắc, kích thước, kiểu chữ, khoảng cách, vị trí và hiệu ứng của các phần tử trên trang web.
+
+            Sự kết hợp giữa HTML và CSS giúp xây dựng các trang web đẹp mắt, có cấu trúc rõ ràng và tương tác linh hoạt. HTML xác định nội dung và cấu trúc, trong khi CSS giúp tạo ra giao diện và kiểu dáng hợp lý cho trang web.
+
+            Một điểm mạnh của HTML và CSS là tính tương thích với các trình duyệt web khác nhau. Cả hai ngôn ngữ này được hỗ trợ rộng rãi trên các trình duyệt phổ biến như Chrome, Firefox, và Safari, đảm bảo rằng trang web của bạn có thể hiển thị đúng và nhất quán trên nhiều nền tảng khác nhau.
+
+            Tổng quan, HTML và CSS là hai ngôn ngữ cơ bản trong phát triển web. HTML giúp xác định cấu trúc và nội dung của trang web, trong khi CSS định dạng và kiểu dáng các phần tử trên trang. Sự kết hợp giữa hai ngôn ngữ này cho phép chúng ta tạo ra các trang web hấp dẫn và chuyên nghiệp.
+        </p>
+    </div>
+
+    <script>
+        // Định nghĩa hàm thay đổi video
+        function changeVideo(videoId) {
+            // Lấy đối tượng player theo ID
+            var player = document.getElementById('video');
+
+            // Xóa nội dung hiện tại của player
+            player.innerHTML = '';
+
+            // Tạo mã nhúng của video mới
+            var embedCode = '<iframe width="900px" height="500px" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+            // Thêm mã nhúng vào player
+            player.innerHTML = embedCode;
+        }
+    </script>
+</body>
+</html>

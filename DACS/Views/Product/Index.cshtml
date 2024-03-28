@@ -1,0 +1,488 @@
+﻿@model IEnumerable<DACS.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!-- Hero Start -->
+<div class="container-fluid bg-primary py-5 mb-5 hero-header">
+    <div class="container py-5">
+        <div class="row justify-content-start">
+            <div class="col-lg-8 text-center text-lg-start">
+                <h1 class="display-1 text-uppercase text-dark mb-lg-4">HOCLAPTRINH.EDU.VN</h1>
+                <h1 class="text-uppercase text-white mb-lg-4">Đầu tư vào kiến thức của bạn và đạt được mục tiêu của mình</h1>
+                <p class="fs-4 text-white mb-lg-4">Trở thành chuyên gia trong lĩnh vực công nghệ thông tin với khóa học chất lượng cao của chúng tôi.</p>
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+                    <a href="" class="btn btn-outline-light border-2 py-md-3 px-md-5 me-5">Xem thêm</a>
+                    <button type="button" class="btn-play" data-bs-toggle="modal"
+                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#
+                            
+                            Modal">
+                        <span></span>
+                    </button>
+                    <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Xem giới thiệu</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+<!-- Video Modal Start -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 16:9 aspect ratio -->
+                <div class="ratio ratio-16x9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/uqlAzC127o8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Video Modal End -->
+<!-- Products Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h6 class="text-primary text-uppercase">Đặc biệt</h6>
+            <h1 class="text-uppercase">Khóa học cao cấp</h1>
+        </div>
+        <div class="owl-carousel product-carousel">
+            @foreach (var item in Model.Where(x => x.CateID == 1))
+            {
+                <div class="pb-5">
+                    <div class="product-item position-relative bg-light d-flex flex-column text-center">
+                        <img class="img-fluid mb-4" src="@item.Image" alt="product-image">
+                        <h6 class="text-uppercase">@item.Title</h6>
+                        <h5 class="text-primary mb-0y-co">@item.Price</h5>
+                        <div class="btn-action d-flex justify-content-center">
+                            <button class="btn btn-primary py-2 px-3" ><i class="bi bi-lightning" onclick="redirectToPayment()" title="Mua siêu tốc"></i></button>
+                            <a class="btn btn-primary py-2 px-3" href="/product/details/@item.ID"><i class="bi bi-eye" title="Xem chi tiết"></i></a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Products End -->
+<!-- Offer Start -->
+<div class="container-fluid bg-offer my-5 py-5">
+    <section class="section main-banner" id="top" data-section="section1">
+        <video autoplay muted loop id="bg-video">
+            <source src="~/Content/img/course-video.mp4" type="video/mp4" />
+        </video>
+        <div class="video-overlay header-text">
+            <div class="scroll-to-section" id="khuyenmai">
+                <div class="container py-5">
+                    <div class="row gx-5 justify-content-start">
+                        <div class="col-lg-7">
+                            <div class="border-start border-5 border-primary ps-5 mb-5" border-green">
+                                <h6 class="display-2 text-uppercase text-green">Ưu đãi đặc biệt</h6>
+                                <h1 class="display-5 text-uppercase text-white mb-0">Giảm 50% cho học viên đăng ký khóa học lần đầu tiên.</h1>
+                            </div>
+                            <p class="text-white mb-4"> Tri ân các học viên mới! <br>Đăng ký ngay để trở thành một trong những người đầu tiên hưởng lợi từ khóa học của chúng tôi và tiết kiệm ngay bây giờ! <br> Nếu bạn trở thành học viên của chúng tôi, bạn có thể nhận được nhiều phần thưởng và ưu đãi khác nữa ngoài việc học tập với các khóa học tuyệt vời<br> Chúng tôi sẽ thường xuyên tổ chức các chương trình khuyến mãi đặc biệt và quà tặng cho các học viên của mình. Ngoài ra, học viên còn được cung cấp các buổi tư vấn cá nhân để giúp học viên phát triển kỹ năng và nâng cao kiến thức của mình.<br>Với các chương trình và ưu đãi này, chúng tôi hy vọng rằng bạn sẽ có thêm động lực để tiếp tục học tập và phát triển bản thân.</p>
+                            <a href="" class="btn btn-light py-md-3 px-md-5 me-3">Mua sắm ngay</a>
+                            <a href="" class="btn btn-outline-light py-md-3 px-md-5">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- Offer End -->
+<!--Product FREE Start-->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h6 class="section-title ff-secondary text-primary fw-normal text-uppercase">MIỄN PHÍ</h6>
+            <h1 class="text-uppercase">Danh sách khóa học miễn phí</h1>
+        </div>
+            <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                        <div class="row g-4">
+                            @foreach (var item in Model.Where(x => x.CateID == 2))
+                            {
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="@item.Image" alt="website template image" style="width:80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>@item.Title</span> <span class="text-primary">Miễn Phí</span></h5>
+                                            <small class="fst-italic">@item.Des</small>
+                                            @*<a href="product/LearnFree" class="button" style="float: right; font-weight: bold;">Học ngay</a>*@
+                                            @if (item.ID == 5)
+                                            {
+                                                <a href="product/LearnFree" class="button" style="float: right; font-weight: bold;">Học ngay</a>
+                                            }
+                                            else if (item.ID == 6)
+                                            {
+                                                <a href="CourseFREE/CourseFree1" class="button" style="float: right; font-weight: bold;">Học ngay</a>
+                                            }
+                                            else if (item.ID == 7)
+                                            {
+                                                <a href="CourseFREE/CourseFree2" class="button" style="float: right; font-weight: bold;">Học ngay</a>
+                                            }
+                                            else if (item.ID == 8)
+                                            {
+                                                <a href="CourseFREE/CourseFree3" class="button" style="float: right; font-weight: bold;">Học ngay</a>
+                                            }
+                                            else if (item.ID == 9)
+                                            {
+                                                <a href="CourseFREE/CourseFree4" class="button" style="float: right; font-weight: bold;">Học ngay</a>
+                                            }
+                                            else
+                                            {
+                                                <a href="#" class="button" style="float: right; font-weight: bold;">Học ngay</a>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--Product FREE End -->
+<!-- Pricing Plan Start -->
+<!--<div class="container-fluid py-5">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h6 class="text-primary text-uppercase">Pricing Plan</h6>
+            <h1 class="display-5 text-uppercase mb-0">Competitive Pricing For Pet Services</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <div class="bg-light text-center pt-5 mt-lg-5">
+                    <h2 class="text-uppercase">Cơ bản</h2>
+                    <h6 class="text-body mb-5">The Best Choice</h6>
+                    <div class="text-center bg-primary p-4 mb-2">
+                        <h1 class="display-4 text-white mb-0">
+                            <small class="align-top"
+                                   style="font-size: 22px; line-height: 45px;">đ</small>49.000<small class="align-bottom" style="font-size: 16px; line-height: 40px;">
+                                /
+                                Tháng
+                            </small>
+                        </h1>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>HTML5 & CSS3</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Bootstrap v5</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Responsive Layout</span>
+                            <i class="bi bi-x fs-4 text-danger"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Browsers Compatibility</span>
+                            <i class="bi bi-x fs-4 text-danger"></i>
+                        </div>
+                        <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bg-light text-center pt-5">
+                    <h2 class="text-uppercase">Tiêu chuẩn</h2>
+                    <h6 class="text-body mb-5">The Best Choice</h6>
+                    <div class="text-center bg-dark p-4 mb-2">
+                        <h1 class="display-4 text-white mb-0">
+                            <small class="align-top"
+                                   style="font-size: 22px; line-height: 45px;">đ</small>99.000<small class="align-bottom" style="font-size: 16px; line-height: 40px;">
+                                /
+                                Tháng
+                            </small>
+                        </h1>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>HTML5 & CSS3</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Bootstrap v5</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Responsive Layout</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Browsers Compatibility</span>
+                            <i class="bi bi-x fs-4 text-danger"></i>
+                        </div>
+                        <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bg-light text-center pt-5 mt-lg-5">
+                    <h2 class="text-uppercase">Đặc biệt</h2>
+                    <h6 class="text-body mb-5">The Best Choice</h6>
+                    <div class="text-center bg-primary p-4 mb-2">
+                        <h1 class="display-4 text-white mb-0">
+                            <small class="align-top"
+                                   style="font-size: 22px; line-height: 45px;">đ</small>149.000<small class="align-bottom" style="font-size: 16px; line-height: 40px;">
+                                /
+                                Tháng
+                            </small>
+                        </h1>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>HTML5 & CSS3</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Bootstrap v5</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Responsive Layout</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Browsers Compatibility</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pricing Plan End -->
+<!-- Team Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h1 class="text-uppercase">Đội ngũ giảng viên chuyên nghiệp</h1>
+        </div>
+        <div class="owl-carousel team-carousel position-relative" style="padding-right: 25px;">
+            <div class="team-item">
+                <div class="position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="~/Content/img/team-1.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="d-flex align-items-center justify-content-start">
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-twitter"></i></a>
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-facebook"></i></a>
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light text-center p-4">
+                    <h5 class="text-uppercase">Full Name</h5>
+                    <p class="m-0">Designation</p>
+                </div>
+            </div>
+            <div class="team-item">
+                <div class="position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="~/Content/img/team-2.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="d-flex align-items-center justify-content-start">
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-twitter"></i></a>
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-facebook"></i></a>
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light text-center p-4">
+                    <h5 class="text-uppercase">Full Name</h5>
+                    <p class="m-0">Designation</p>
+                </div>
+            </div>
+            <div class="team-item">
+                <div class="position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="~/Content/img/team-3.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="d-flex align-items-center justify-content-start">
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-twitter"></i></a>
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-facebook"></i></a>
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light text-center p-4">
+                    <h5 class="text-uppercase">Full Name</h5>
+                    <p class="m-0">Designation</p>
+                </div>
+            </div>
+            <div class="team-item">
+                <div class="position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="~/Content/img/team-4.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="d-flex align-items-center justify-content-start">
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-twitter"></i></a>
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-facebook"></i></a>
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light text-center p-4">
+                    <h5 class="text-uppercase">Full Name</h5>
+                    <p class="m-0">Designation</p>
+                </div>
+            </div>
+            <div class="team-item">
+                <div class="position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="~/Content/img/team-5.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="d-flex align-items-center justify-content-start">
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-twitter"></i></a>
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-facebook"></i></a>
+                            <a class="btn btn-light btn-square mx-1" href="#"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light text-center p-4">
+                    <h5 class="text-uppercase">Full Name</h5>
+                    <p class="m-0">Designation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+<!-- Testimonial Start -->
+<div class="container-fluid bg-testimonial py-5" style="margin: 45px 0;">
+    <div class="container py-5">
+        <div class="row justify-content-end">
+            <div class="col-lg-7">
+                <div class="owl-carousel testimonial-carousel bg-white p-5">
+                    <div class="testimonial-item text-center">
+                        <div class="position-relative mb-4">
+                            <img class="img-fluid mx-auto" src="~/Content/img/testimonial-1.jpg" alt="">
+                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
+                                <i class="bi bi-chat-square-quote text-primary"></i>
+                            </div>
+                        </div>
+                        <p>Tôi đã mua khóa học từ trang web này và bây giờ tôi đã trở thành một 'nhà lập trình thần thánh'. Ngày xưa, tôi chỉ biết đến 'hello world', giờ đây tôi có thể viết 'hello world' bằng 10 ngôn ngữ khác nhau và vẫn không biết nó nghĩa gì!</p>
+                        <hr class="w-25 mx-auto">
+                        <h5 class="text-uppercase">Trần Thị A</h5>
+                        <span>Tốt nghiệp loại khá</span>
+                    </div>
+                    <div class="testimonial-item text-center">
+                        <div class="position-relative mb-4">
+                            <img class="img-fluid mx-auto" src="~/Content/img/testimonial-2.jpg" alt="">
+                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
+                                <i class="bi bi-chat-square-quote text-primary"></i>
+                            </div>
+                        </div>
+                        <p>Trang web bán khóa học này quá tuyệt vời, tôi đã học được cả một ngôn ngữ mới - 'ngôn ngữ lập trình trong giấc mơ'. Bởi vì mỗi khi tôi đến đây, tôi mơ thấy mình đang viết code ngày cả khi đang ngủ!</p>
+                        <hr class="w-25 mx-auto">
+                        <h5 class="text-uppercase">Nguyễn Văn B</h5>
+                        <span>Tốt nghiệp loại giỏi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+<!-- Blog Start -->
+<div class="container-fluid py-5" id="blog">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h6 class="text-primary text-uppercase">Blogs</h6>
+            <h1 class="text-uppercase">Các blogs được đăng tải gần đây</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="blog-item">
+                    <div class="row g-0 bg-light overflow-hidden">
+                        <div class="col-12 col-sm-5 h-100">
+                            <img class="img-fluid h-100" src="~/Content/img/blog1.jpg" style="object-fit: cover;">
+                        </div>
+                        <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
+                            <div class="p-4">
+                                <div class="d-flex mb-3">
+                                    <small class="me-3"><i class="bi bi-bookmarks me-2"></i>Blog mỗi ngày</small>
+                                    <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2045</small>
+                                </div>
+                                <h5 class="text-uppercase mb-3">Chống Fake News: Công nghệ đảm bảo sự thật</h5>
+                                <p>Công nghệ chống fake news đóng vai trò quan trọng trong việc phát hiện và ngăn chặn sự lan truyền của tin tức giả, đảm bảo sự chính xác và tin cậy của thông tin trên mạng.</p>
+                                <a class="text-primary text-uppercase" href="/Home/Blog">Xem thêm<i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="blog-item">
+                    <div class="row g-0 bg-light overflow-hidden">
+                        <div class="col-12 col-sm-5 h-100">
+                            <img class="img-fluid h-100" src="~/Content/img/blog2.jpg" style="object-fit: cover;">
+                        </div>
+                        <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
+                            <div class="p-4">
+                                <div class="d-flex mb-3">
+                                    <small class="me-3"><i class="bi bi-bookmarks me-2"></i>Blog mỗi ngày</small>
+                                    <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2045</small>
+                                </div>
+                                <h5 class="text-uppercase mb-3">Chiếc máy đánh chữ đầu tiên trên thế giới.</h5>
+                                <p>Chiếc máy đánh chữ đầu tiên trên thế giới, được phát triển bởi Christopher Latham Sholes vào năm 1868, đã mở ra một cánh cửa mới cho việc truyền đạt thông tin và tăng cường hiệu suất công việc</p>
+                                <a class="text-primary text-uppercase" href="/Home/Blog">Xem thêm<i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
+<!--<div class="container course-detail-container">
+    <div class="course-detail--left">
+        <div class="course-general syllabus__wrapper">
+            <h5 class="title">Nội dung khóa học</h5>
+            <div class="syllabus">
+                <div class="syllabus-item">
+                    <a href="#chapter0" class="syllabus__cta collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <div class="syllabus__chapter">
+                            <span class="syllabus__icon">
+                                <img src="https://cdn-skill.kynaenglish.vn/img/arrow.svg" alt="Kyna" width="20px" height="20px">
+                            </span>
+                            <div class="syllabus__heading">
+                                <h6 class="heading">
+                                    <span class="syllabus__title">
+                                        Phần 1: Giới thiệu khóa học
+                                    </span>
+                                </h6>
+                            </div>
+                            <div class="syllabus__info">
+                                <div class="syllabus__info-item">
+                                    <span>1 video</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="collapse" id="chapter0" aria-expanded="false" style="height: 0px;">
+                        <div class="syllabus__section">
+                            <div class="syllabus__section-item">-->
+<!-- Nội dung phần tử -->
+<!--</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->

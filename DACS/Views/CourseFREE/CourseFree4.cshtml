@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "CourseFree4";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .video-container {
+            float: left;
+            width: 60%;
+        }
+
+        .content-container {
+            float: left;
+            width: 40%;
+        }
+
+        .list-container {
+            background: #fedebe;
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        ul.tree ul {
+            display: none;
+        }
+
+        ul.tree li {
+            cursor: pointer;
+        }
+
+        ul.tree li::before {
+            content: "•";
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        ul.tree li.open::before {
+            content: "-";
+        }
+
+        .bottom-section {
+            background-color: #ffffff;
+            padding: 20px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-section">
+        <div class="video-container">
+            <div class="video">
+                <h2>Lập trình IoT</h2>
+                <!-- Thêm mã HTML/video player ở đây -->
+                <div id="video">
+                    <iframe width="900" height="500" src="https://www.youtube.com/embed/-pmAO8JsH5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="list-container">
+                <h2>Nội dung khóa học</h2>
+                <ul class="tree">
+                    <li onclick="changeVideo('-pmAO8JsH5U')">Bài 1: Giới thiệu về IoT và Kit wifi node mcu esp8266</li>
+                    <li onclick="changeVideo('dTZbXzGvdu8')">Bài 2: Cách lập trình và nạp code cho Kit wifi node mcu esp8266</li>
+                    <li onclick="changeVideo('LdbqrYT7Q0g')">Bài 3: Tìm hiểu về Web Server trên Kit wifi node mcu esp8266</li>
+                    <li onclick="changeVideo('aoWAltuGFMg')">Bài 4: Tìm hiểu về Web Server và kỹ thuật ajax</li>
+                    <li onclick="changeVideo('Akt3SdKL4yM')">Bài 5: Lưu dữ liệu vào EEPROM</li>
+                    <li onclick="changeVideo('Pko4xVGKFIc')">Bài 6: Điều khiển thiết bị offline dùng web server</li>
+                    <li onclick="changeVideo('_bk0FB6p-B4')">Bài 7: Điều khiển thiết bị online dùng app Blynk</li>
+                    <li onclick="changeVideo('SkvmkEUJ79g')">Bài 8: Điều khiển thiết bị bằng giọng nói</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-section">
+        <h2>Nội dung</h2>
+        <p>
+            Khóa học IoT (Internet of Things) là một chương trình đào tạo thiết kế để giúp sinh viên và chuyên gia công nghệ có kiến thức và kỹ năng cần thiết để làm việc trong lĩnh vực IoT. IoT là một mạng lưới các thiết bị vật lý được kết nối với nhau thông qua internet, cho phép trao đổi dữ liệu và thực hiện các nhiệm vụ tự động.
+
+            Khóa học IoT thường cung cấp kiến thức về các khía cạnh sau đây:
+
+            1. Cơ sở lý thuyết: Học viên được giới thiệu với các khái niệm cơ bản về IoT, bao gồm kiến trúc hệ thống, mạng lưới, giao thức, bảo mật và quyền riêng tư.
+
+            2. Các công nghệ và giao thức IoT: Khóa học giới thiệu các công nghệ và giao thức phổ biến trong lĩnh vực IoT, bao gồm Wi-Fi, Bluetooth, Zigbee, MQTT, CoAP và các tiêu chuẩn liên quan khác.
+
+            3. Cảm biến và thiết bị: Học viên được làm quen với các loại cảm biến và thiết bị phổ biến trong IoT, như cảm biến nhiệt độ, ánh sáng, gia tốc, GPS, và các thiết bị như Raspberry Pi, Arduino để xây dựng các hệ thống IoT.
+
+            4. Phân tích dữ liệu: Khóa học cung cấp các kỹ thuật phân tích dữ liệu để trích xuất thông tin hữu ích từ dữ liệu IoT, bao gồm xử lý tín hiệu, học máy và trí tuệ nhân tạo.
+
+            5. Ứng dụng và phát triển IoT: Học viên được hướng dẫn cách xây dựng và triển khai các ứng dụng IoT thông qua việc phát triển ứng dụng di động, giao diện web hoặc các ứng dụng đám mây để tương tác và kiểm soát các thiết bị IoT.
+
+            6. Bảo mật và quản lý rủi ro: Khóa học đặt sự chú trọng vào các vấn đề bảo mật và quản lý rủi ro trong các hệ thống IoT, bao gồm xác thực, mã hóa, phòng ngừa tấn công mạng và quản lý dữ liệu cá nhân.
+
+            Khóa học IoT thường kết hợp giảng dạy lý thuyết với các bài tập thực hành và dự án thực tế để học viên có cơ hội áp dụng kiến thức đã học vào thực tế.
+        </p>
+    </div>
+
+    <script>
+        // Định nghĩa hàm thay đổi video
+        function changeVideo(videoId) {
+            // Lấy đối tượng player theo ID
+            var player = document.getElementById('video');
+
+            // Xóa nội dung hiện tại của player
+            player.innerHTML = '';
+
+            // Tạo mã nhúng của video mới
+            var embedCode = '<iframe width="900px" height="500px" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+            // Thêm mã nhúng vào player
+            player.innerHTML = embedCode;
+        }
+    </script>
+</body>
+</html>

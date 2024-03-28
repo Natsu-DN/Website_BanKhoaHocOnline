@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "CourseFree1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .video-container {
+            float: left;
+            width: 60%;
+        }
+
+        .content-container {
+            float: left;
+            width: 40%;
+        }
+
+        .list-container {
+            background: #fedebe;
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+            ul.tree ul {
+                display: none;
+            }
+
+            ul.tree li {
+                cursor: pointer;
+            }
+
+                ul.tree li::before {
+                    content: "•";
+                    display: inline-block;
+                    margin-right: 5px;
+                }
+
+                ul.tree li.open::before {
+                    content: "-";
+                }
+
+        .bottom-section {
+            background-color: #ffffff;
+            padding: 20px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-section">
+        <div class="video-container">
+            <div class="video">
+                <h2>Học lập trình NODEJS</h2>
+                <!-- Thêm mã HTML/video player ở đây -->
+                <div id="video">
+                    <iframe width="900" height="500" src="https://www.youtube.com/embed/z2f7RHgvddc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="list-container">
+                <h2>Nội dung khóa học</h2>
+                <ul class="tree">
+                    <li onclick="changeVideo('SdcdneSdoV4')">Bài 1: Giới thiệu về Giao thức HTTP</li>
+                    <li onclick="changeVideo('HLEu57iLrRo')">Bài 2: Tìm hiểu về SSR và CSR</li>
+                    <li onclick="changeVideo('CcSuYLjKW3g')">Bài 3: Cách cài đặt NodeJS</li>
+                    <li onclick="changeVideo('f0C9kTOf6IY')">Bài 4: Cách thêm Repository</li>
+                    <li onclick="changeVideo('lpbl2qQXbDo')">Bài 5: Đưa Temple vào dự án</li>
+                    <li onclick="changeVideo('zNLXsTu_kUA')">Bài 6: Sử dụng Boostrap</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-section">
+        <h2>Nội dung</h2>
+        <p>
+            Node.js là một nền tảng phát triển ứng dụng được xây dựng trên nền tảng JavaScript, cho phép chúng ta xây dựng các ứng dụng mạng phía máy chủ hiệu quả và linh hoạt. Đặc điểm nổi bật của Node.js là khả năng xử lý đồng thời cao và khả năng xây dựng các ứng dụng thời gian thực.
+
+            Với Node.js, chúng ta có thể viết mã JavaScript ở phía máy chủ, điều này mở ra nhiều cơ hội và tiện ích cho việc xây dựng ứng dụng web. Node.js sử dụng mô hình sự kiện và không đồng bộ (event-driven và non-blocking) để xử lý các yêu cầu. Điều này có nghĩa là Node.js có thể xử lý nhiều yêu cầu cùng lúc mà không chờ đợi yêu cầu trước đó hoàn thành.
+
+            Một trong những ưu điểm của Node.js là cộng đồng phát triển mạnh mẽ và hỗ trợ đa dạng. Có rất nhiều thư viện và framework được xây dựng trên Node.js, giúp cho việc phát triển ứng dụng trở nên dễ dàng và nhanh chóng. Express.js, Nest.js, và Socket.io là một số ví dụ điển hình về những framework phổ biến trong cộng đồng Node.js.
+
+            Node.js cũng hỗ trợ xây dựng các ứng dụng real-time như ứng dụng chat hoặc ứng dụng đa người chơi trực tuyến thông qua sử dụng WebSocket. Điều này cho phép ứng dụng gửi và nhận dữ liệu mà không cần phải làm mới trang.
+
+            Tóm lại, Node.js là một nền tảng mạnh mẽ cho phát triển ứng dụng mạng phía máy chủ. Với khả năng xử lý đồng thời cao, Node.js cho phép chúng ta xây dựng các ứng dụng hiệu quả và linh hoạt. Sự phát triển mạnh mẽ và cộng đồng hỗ trợ đa dạng làm cho Node.js trở thành một lựa chọn phổ biến cho các nhà phát triển ứng dụng web.
+        </p>
+    </div>
+
+    <script>
+        // Định nghĩa hàm thay đổi video
+        function changeVideo(videoId) {
+            // Lấy đối tượng player theo ID
+            var player = document.getElementById('video');
+
+            // Xóa nội dung hiện tại của player
+            player.innerHTML = '';
+
+            // Tạo mã nhúng của video mới
+            var embedCode = '<iframe width="900px" height="500px" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+            // Thêm mã nhúng vào player
+            player.innerHTML = embedCode;
+        }
+    </script>
+</body>
+</html>
+
+

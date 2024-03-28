@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "CourseFree2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .video-container {
+            float: left;
+            width: 60%;
+        }
+
+        .content-container {
+            float: left;
+            width: 40%;
+        }
+
+        .list-container {
+            background: #fedebe;
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+            ul.tree ul {
+                display: none;
+            }
+
+            ul.tree li {
+                cursor: pointer;
+            }
+
+                ul.tree li::before {
+                    content: "•";
+                    display: inline-block;
+                    margin-right: 5px;
+                }
+
+                ul.tree li.open::before {
+                    content: "-";
+                }
+
+        .bottom-section {
+            background-color: #ffffff;
+            padding: 20px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-section">
+        <div class="video-container">
+            <div class="video">
+                <h2>Lập trình Python</h2>
+                <!-- Thêm mã HTML/video player ở đây -->
+                <div id="video">
+                    <iframe width="900" height="500" src="https://www.youtube.com/embed/NZj6LI5a9vc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="list-container">
+                <h2>Nội dung khóa học</h2>
+                <ul class="tree">
+                    <li onclick="changeVideo('jf-q_dG8WzI')">Cách cài đặt môi trường Python</li>
+                    <li onclick="changeVideo('QFxqY8qv42E')">Hướng chạy File .PY</li>
+                    <li onclick="changeVideo('t3dERE9T5yg')">Comment trong Python</li>
+                    <li onclick="changeVideo('dDFFCbRGm3o')">Tìm hiểu Tuple trong Python</li>
+                    <li onclick="changeVideo('6J8-jkoRBXw')">Xử lý File</li>
+                    <li onclick="changeVideo('UzTE665WXb8')">Tìm hiểu về List</li>
+                    <li onclick="changeVideo('rK4MphZVhDM')">Cấu trúc hàm nhập. hàm xuất</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-section">
+        <h2>Nội dung</h2>
+        <p>
+            Python là một ngôn ngữ lập trình cao cấp, dễ học và dễ đọc. Nó có cú pháp đơn giản và rõ ràng, giúp nhà phát triển tập trung vào giải quyết vấn đề mà không phải lo lắng về cú pháp phức tạp.
+
+            Một trong những ưu điểm của Python là tính đa năng. Python có thể được sử dụng để phát triển các ứng dụng web, ứng dụng di động, ứng dụng máy tính, phân tích dữ liệu, trí tuệ nhân tạo và nhiều lĩnh vực khác. Thư viện và framework phong phú của Python như Django, Flask, NumPy và TensorFlow cung cấp các công cụ mạnh mẽ để xây dựng các ứng dụng phức tạp.
+
+            Python cũng có một cộng đồng phát triển mạnh mẽ và hỗ trợ đa dạng. Cộng đồng Python rất lớn và nhiệt tình, cung cấp các tài liệu, thư viện và giải pháp cho các vấn đề phổ biến. Điều này giúp nhà phát triển tiết kiệm thời gian và tăng tính ổn định của ứng dụng.
+
+            Python cũng được đánh giá cao về độ tin cậy và hiệu năng. Với trình thông dịch và bộ thu gom rác tự động, Python giúp giảm thiểu lỗi và tăng cường hiệu suất của ứng dụng. Ngoài ra, Python có khả năng tích hợp tốt với các ngôn ngữ khác như C/C++ và Java, cho phép tái sử dụng mã nguồn và mở rộng khả năng của ứng dụng.
+
+            Tóm lại, Python là một ngôn ngữ lập trình đa năng, dễ học và có cộng đồng phát triển mạnh mẽ. Tính đa dụng, độ tin cậy và hiệu năng của Python làm cho nó trở thành một công cụ mạnh mẽ cho việc phát triển ứng dụng trong nhiều lĩnh vực khác nhau.
+        </p>
+    </div>
+
+    <script>
+        // Định nghĩa hàm thay đổi video
+        function changeVideo(videoId) {
+            // Lấy đối tượng player theo ID
+            var player = document.getElementById('video');
+
+            // Xóa nội dung hiện tại của player
+            player.innerHTML = '';
+
+            // Tạo mã nhúng của video mới
+            var embedCode = '<iframe width="900px" height="500px" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+            // Thêm mã nhúng vào player
+            player.innerHTML = embedCode;
+        }
+    </script>
+</body>
+</html>
+
+
+
+

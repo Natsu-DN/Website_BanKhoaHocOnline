@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DACS.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container-fluid px-4">
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            DataTable Example
+        </div>
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>Tên khóa học</th>
+                        <th>Mô tả</th>
+                        <th>Giá</th>
+                        <th>Hình ảnh</th>
+                        <th>Tên loại</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>@item.Des</td>
+                            <td>@item.Price</td>
+                            <td><img src="@item.Image" alt="Error Image" width="100px" height="100px"/></td>
+                            <td>
+                                @item.Category.Title
+                            </td>
+                            <td>
+                                @Html.ActionLink("Sửa", "Edit", "Product", new { area = "", id = item.ID }, null)|
+                                @Html.ActionLink("Chi tiết", "Details", "Product", new { area = "", id = item.ID }, null)|
+                                @Html.ActionLink("Xóa", "Delete", "Product", new { area = "", id = item.ID }, null)|
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
